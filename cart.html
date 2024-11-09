@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Food Mania</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <header>
+        <div class="container">
+            <h1>Food Mania</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="details.html">Details</a>
+                <a href="cart.html">Cart</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <header>
+        <h1>Your Cart</h1>
+    </header>
+
+    <section id="cart">
+        <div class="cart-items-container">
+            <h2>Items in Your Cart</h2>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-total">
+                <h3>Total: ₹<span id="totalPrice"></span></h3>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+
+      
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const totalPriceElement = document.getElementById('totalPrice');
+
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let total = 0;
+
+            if (cartItems.length === 0) {
+                cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+            } else {
+                cartItems.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'cart-item';
+                    itemElement.innerHTML = `<p>${item.name} - ₹${item.price}</p>`;
+                    cartItemsContainer.appendChild(itemElement);
+
+                    total += parseInt(item.price);
+                });
+                totalPriceElement.textContent = total;
+            }
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const totalPriceElement = document.getElementById('totalPrice');
+
+            // Retrieve items from localStorage
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let total = 0;
+
+            function updateCartDisplay() {
+                cartItemsContainer.innerHTML = ""; // Clear previous items
+                total = 0; // Reset total
+                
+                if (cartItems.length === 0) {
+                    cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+                } else {
+                    cartItems.forEach((item, index) => {
+                        const itemElement = document.createElement('div');
+                        itemElement.className = 'cart-item';
+
+                        itemElement.innerHTML = `
+                            <p>${item.name} - ₹${item.price}</p>
+                            <button class="remove-btn" data-index="${index}">Remove</button>
+                        `;
+                        cartItemsContainer.appendChild(itemElement);
+
+                        total += item.price;
+                    });
+                }
+                totalPriceElement.textContent = total;
+            }
+
+            // Update the cart display initially
+            updateCartDisplay();
+
+            // Remove item from cart
+            cartItemsContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('remove-btn')) {
+                    const itemIndex = e.target.getAttribute('data-index');
+                    cartItems.splice(itemIndex, 1); // Remove item from cartItems array
+                    
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Update localStorage
+                    updateCartDisplay(); // Re-render cart with updated items
+                }
+            });
+        });
+    </script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cartItemsContainer = document.getElementById('cartItems');
+        const totalPriceElement = document.getElementById('totalPrice');
+
+        // Retrieve items from localStorage
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        let total = 0;
+
+        function updateCartDisplay() {
+            cartItemsContainer.innerHTML = ""; // Clear previous items
+            total = 0; // Reset total
+            
+            if (cartItems.length === 0) {
+                cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+            } else {
+                cartItems.forEach((item, index) => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'cart-item';
+
+                    itemElement.innerHTML = `
+                        <p>${item.name} - ₹${item.price}</p>
+                        <button class="remove-btn" data-index="${index}">Remove</button>
+                    `;
+                    cartItemsContainer.appendChild(itemElement);
+
+                    total += item.price; // Add item price to total
+                });
+            }
+            totalPriceElement.textContent = total; // Display the total
+        }
+
+        // Update the cart display initially
+        updateCartDisplay();
+
+        // Remove item from cart
+        cartItemsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('remove-btn')) {
+                const itemIndex = e.target.getAttribute('data-index');
+                cartItems.splice(itemIndex, 1); // Remove item from cartItems array
+                
+                localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Update localStorage
+                updateCartDisplay(); // Re-render cart with updated items
+            }
+        });
+    });
+</script>
+
+
+
+<footer>
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-about">
+            <h4>About Food Mania</h4>
+            <p>Food Mania brings authentic South Indian flavors right to your doorstep. Our mission is to deliver fresh, delicious food quickly and reliably.</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-contact">
+            <h4>Contact Us</h4>
+            <p>Email: support@foodmania.com</p>
+            <p>Phone: +91 12345 67890</p>
+            <p>Address: 123 South Avenue, Chennai, India</p>
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Food Mania. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

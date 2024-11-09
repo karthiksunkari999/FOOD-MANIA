@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Food Mania</title>
+    <link rel="stylesheet" href="style.css">
+   
+        
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Food Mania</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+                <a href="details.html">Details</a>
+                <a href="cart.html">Cart</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu">
+        <h2>Our Menu</h2>
+        <p>Explore the rich flavors and vibrant dishes of our Restaurant</p>
+        
+
+
+
+
+
+<script>
+    function addToCart(name, price) {
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        cartItems.push({ name, price });
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert(`${name} added to cart`);
+    }
+</script>
+
+        <div class="menu-container">
+            <!-- Dish Example 1 -->
+            
+                <div class="menu-item">
+                    <img src="https://img.freepik.com/premium-photo/masala-dosa-is-south-indian-meal-served-with-sambhar-coconut-chutney-selective-focus_466689-22971.jpg" alt="Masala Dosa">
+                    <h3>Masala Dosa</h3>
+                    <p>Price: ₹120</p>
+                    <button class="add-to-cart-btn" data-item="Masala Dosa" data-price="120">Add to Cart</button>
+                    
+                    
+
+                </div>
+                
+          
+           
+                <div class="menu-item">
+                    <img src="https://img.freepik.com/premium-photo/south-indian-idli-served-with-chutney-isolated-white-background_641503-87422.jpg" alt="idli">
+                    <h3>idli</h3>
+                    <p>Price: ₹80</p>
+                    <button class="add-to-cart-btn" data-item="idli" data-price="80">Add to Cart</button>
+                </div>
+                
+            
+
+            <div class="menu-item">
+                <img src="https://media.istockphoto.com/id/1488738018/photo/medu-vada-or-medu-vada-with-sambhar-and-coconut-chutney-red-chutney-green-chutney-popular.jpg?s=612x612&w=0&k=20&c=dvWgKhQuw1lfOBxDpR6YFMLSZnWdyqYGV1pvcBt7mZw=" alt="Medu Vada">
+                <h3>Medu Vada</h3>
+                <p>Price: ₹90</p>
+                <button class="add-to-cart-btn" data-item="Meda Vada" data-price="90">Add to cart</button>
+            </div>
+        
+
+            <div class="menu-item">
+                <img src="https://media.istockphoto.com/id/501150349/photo/chicken-biryani-11.jpg?s=612x612&w=0&k=20&c=w6mDnUx8MnH3rnP9bR0VfWRwrODcbTz-6U07o3Zrs4o=" alt="Hyderabadi Biryani">
+                <h3>Hyderabadi Biryani</h3>
+                <p>Price: ₹200</p>
+                <button class="add-to-cart-btn" data-item="Hyderabadi biryani" data-price="200">Add to cart</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://thumbs.dreamstime.com/b/upma-made-samolina-rava-upma-most-famous-south-indian-breakfast-item-which-beautifully-arranged-plate-banana-216111370.jpg" alt="Upma">
+                <h3>Upma</h3>
+                <p>Price: ₹70</p>
+                <button class="add-to-cart-btn"data-item="Upma" data-price="70">Add to cart</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://t4.ftcdn.net/jpg/05/76/25/67/360_F_576256741_gpNzOOtXk5BDR63fFBonDK5grE2x8uJB.jpg" alt="Ven Pongal">
+                <h3>Ven Pongal</h3>
+                <p>Price: ₹85</p>
+                <button class="add-to-cart-btn" data-item="ven pongal" data-price="85">Add to cart</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://media.istockphoto.com/id/1318594212/photo/onion-uttapam-dish.jpg?s=612x612&w=0&k=20&c=eImoOnPt4YvpjHbIWS3t5j2Pd_H7E_U8nRlPd1-KdL8=" alt="Uttapam">
+                <h3>Uttapam</h3>
+                <p>Price: ₹115</p>
+                <button class="add-to-cart-btn" data-item="Uttapam" data-price="115">Add to cart</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://media.istockphoto.com/id/1156501972/photo/spicy-chicken-chettinad-in-a-clay-pot.jpg?s=612x612&w=0&k=20&c=dmxl9MnS66dIofMYDK64sZIVK1kwdkccirZtVjspicc=" alt="Chettinad Chicken">
+                <h3>Chettinad Chicken</h3>
+                <p>Price: ₹180</p>
+                <button class="add-to-cart-btn" data-item="chettinad chicken" data-price="180">Add to cart</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://media.istockphoto.com/id/1156678194/photo/appam-served-with-stew-hot-tea.jpg?s=612x612&w=0&k=20&c=0eIoBMWlP2zNRydCzjvAQlN5i1GomG5U5xWPsuWCpjs=" alt="Appam with Stew">
+                <h3>Appam with Stew</h3>
+                <p>Price: ₹130</p>
+                <button class="add-to-cart-btn" data-item="Appam with stew" data-price="130">Add to cart</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://www.shutterstock.com/image-photo/tomato-rasam-curry-hot-spicy-260nw-2122876280.jpg" alt="Rasam">
+                <h3>Rasam</h3>
+                <p>Price: ₹60</p>
+                <button class="add-to-cart-btn" data-item="rasam" data-price="60">Add to cart</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://www.shutterstock.com/image-photo/pesarattu-dosa-moong-dosai-indian-260nw-2246279175.jpg" alt="Pesarattu">
+                <h3>Pesarattu</h3>
+                <p>Price: ₹100</p>
+                <button class="add-to-cart-btn"data-item="pesarattu" data-price="100">Add to cart</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://www.shutterstock.com/image-photo/south-indian-filter-coffee-served-260nw-2205254433.jpg" alt="South Indian Filter Coffee">
+                <h3>South Indian Filter Coffee</h3>
+                
+                <p>Price: ₹50</p>        
+                  <button class="add-to-cart-btn" data-item="south indian filter coffee" data-price="50">Add to cart</button>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const itemName = button.getAttribute('data-item');
+                const itemPrice = button.getAttribute('data-price');
+                
+                let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                cartItems.push({ name: itemName, price: itemPrice });
+                
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                alert(`${itemName} added to cart!`);
+            });
+        });
+        </script>
+        
+
+    <footer>
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-about">
+                <h4>About Food Mania</h4>
+                <p>Food Mania brings authentic South Indian flavors right to your doorstep. Our mission is to deliver fresh, delicious food quickly and reliably.</p>
+            </div>
+    
+            <!-- Contact Information -->
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: support@foodmania.com</p>
+                <p>Phone: +91 12345 67890</p>
+                <p>Address: 123 South Avenue, Chennai, India</p>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Food Mania. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    
+</body>
+</html>
